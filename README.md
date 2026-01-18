@@ -64,21 +64,23 @@ The following artifacts were created and documented:
 - **Database Exercise 2: Taxis per Company**  
   Query: `SELECT company_name, COUNT(DISTINCT vehicle_id) as cnt FROM cabs GROUP BY company_name HAVING COUNT(DISTINCT vehicle_id) < 100 ORDER BY cnt DESC;`  
   Result: List of companies with <100 taxis.
+  
   <img width="452" height="715" alt="image" src="https://github.com/user-attachments/assets/a64b7940-9ba2-42bb-b2b0-ed7b73954706" />
 
 
 - **Database Exercise 3: Weather Conditions**  
   Query: `SELECT ts, description, CASE WHEN description LIKE '%rain%' THEN 'bad' WHEN description LIKE '%storm%' THEN 'bad' ELSE 'good' END AS weather_conditions FROM weather_records WHERE ts BETWEEN '2017-11-05 00:00:00' AND '2017-11-06 00:00:00';`  
   Result: Table with timestamps and conditions.
+  
   <img width="676" height="490" alt="image" src="https://github.com/user-attachments/assets/e10e2c8a-edfb-45a0-aa7f-052fc8d952be" />
 
 
 - **Database Exercise 4: Trip Counts**  
   Query: `SELECT cabs.company_name, COUNT(trips.trip_id) as trips_amount FROM cabs LEFT JOIN trips on trips.cab_id = cabs.cab_id WHERE start_ts::date IN ('2017-11-15', '2017-11-16') GROUP BY cabs.company_name ORDER BY trips_amount DESC;`  
   Result: Table with company trip counts.
+  
   <img width="525" height="793" alt="image" src="https://github.com/user-attachments/assets/a7563a11-e51a-475b-9865-a36ec2983da9" />
-
-
+  
 ---
 
 # 🐞Bug Reporting
